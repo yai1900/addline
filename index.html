@@ -2,10 +2,87 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>กำลังพาไปยังหน้าใหม่...</title>
-  <meta http-equiv="refresh" content="0; url=https://rebrand.ly/UTM-1ukfm0">
+  <title>เพิ่มเพื่อนใน LINE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #06C755;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #04a94f;
+    }
+    .msg {
+      color: green;
+      margin-top: 10px;
+      display: none;
+    }
+    .qr {
+      margin-top: 25px;
+    }
+    .qr img {
+      width: 180px;
+      height: 180px;
+    }
+  </style>
 </head>
 <body>
-  <p>กำลังพาไปยังลิงก์ กรุณารอสักครู่...</p>
+
+  <div class="box">
+    <h2>เพิ่มเพื่อนใน LINE</h2>
+    <p>คัดลอกลิงก์ด้านล่างแล้วเปิดใน Safari หรือ Chrome</p>
+    <input id="link" value="https://line.me/R/ti/p/@muay333" readonly>
+    <button onclick="copy()">คัดลอกลิงก์</button>
+    <div class="msg" id="msg">คัดลอกลิงก์แล้ว! วางในเบราว์เซอร์เพื่อเพิ่มเพื่อน</div>
+
+    <div class="qr">
+      <p>หรือสแกน QR ด้านล่าง</p>
+      <img src="https://qr-official.line.me/sid/L/508ugeem.png" alt="QR LINE">
+    </div>
+  </div>
+
+  <script>
+    function copy() {
+      const link = document.getElementById("link");
+      link.select();
+      document.execCommand("copy");
+      document.getElementById("msg").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>

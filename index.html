@@ -2,32 +2,115 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>กำลังพาไปเพิ่มเพื่อนใน LINE...</title>
+  <title>เพิ่มเพื่อนใน LINE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=https://rebrand.ly/zszsrzo">
   <style>
     body {
-      background-color: #e8f5e9;
       font-family: sans-serif;
+      background: #e8f5e9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      max-width: 95%;
+      width: 400px;
       text-align: center;
-      padding-top: 100px;
+    }
+    .logo img {
+      width: 80px;
+      margin-bottom: 10px;
     }
     h1 {
+      margin: 10px 0 5px;
       color: #06C755;
+      font-size: 26px;
     }
     p {
+      margin-top: 0;
       color: #333;
-      font-size: 18px;
     }
-    a {
-      color: #06C755;
-      font-weight: bold;
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #06C755;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #04a94f;
+    }
+    .msg {
+      color: green;
+      margin-top: 10px;
+      display: none;
+    }
+    .qr {
+      margin-top: 25px;
+    }
+    .qr img {
+      width: 180px;
+      height: 180px;
+    }
+    .link-button {
+      margin-top: 20px;
+      display: inline-block;
+      background: #00c300;
+      color: white;
       text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <h1>กำลังพาไป LINE...</h1>
-  <p>ถ้าไม่ถูกเปลี่ยนหน้า <a href="https://rebrand.ly/zszsrzo">คลิกที่นี่</a></p>
+
+  <div class="container">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE Logo">
+    </div>
+    <h1>เพิ่มเพื่อน @251aktnu</h1>
+    <p>คัดลอกชื่อด้านล่างแล้ววางใน "เพิ่มเพื่อนด้วย ID"</p>
+    <input id="copyText" value="@251aktnu" readonly>
+    <button onclick="copyText()">คัดลอกชื่อไลน์</button>
+    <div class="msg" id="copyMsg">คัดลอกแล้ว! ไปวางใน LINE ได้เลย</div>
+
+    <div class="link">
+      <a class="link-button" href="https://rebrand.ly/zszsrzo" target="_blank">กดเพื่อเพิ่มเพื่อนใน LINE</a>
+    </div>
+
+    <div class="qr">
+      <p>หรือสแกน QR ด้านล่าง</p>
+      <img src="https://qr-official.line.me/sid/L/251aktnu.png" alt="QR LINE">
+    </div>
+  </div>
+
+  <script>
+    function copyText() {
+      const text = document.getElementById("copyText");
+      text.select();
+      document.execCommand("copy");
+      document.getElementById("copyMsg").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
